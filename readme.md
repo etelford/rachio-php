@@ -23,7 +23,7 @@ This SDK requires **PHP >= 5.5.0**.
 * [Controlling Your Rachio](#controlling)
 
 
-<!-- <a name="install"/> -->
+<a name="install"/>
 ## Installation
 
 The Rachio SDK may be installed through Composer.
@@ -35,76 +35,98 @@ Make sure you're using Composer's [autoload](https://getcomposer.org/doc/00-intr
     require_once('vendor/autoload.php');
 
 
-<!-- <a name="start"> -->
+<a name="start">
 ## Creating a Rachio Instance
 
 First, import the class.
 
-    use Etelford\Rachio;
+```php
+use Etelford\Rachio;
+```
 
 Next, create a new instance of `Rachio` and pass in your API key.
 
-    $rachio = new Rachio('c0cc4791-57a4-4beb-98d7-9dffa6059f65');
+```php
+$rachio = new Rachio('c0cc4791-57a4-4beb-98d7-9dffa6059f65');
+```
 
 With a `Rachio` object created, you can do a number of things.
 
 
-<!-- <a name="user-data"> -->
+<a name="user-data">
 ## Getting User data
 
 ### Get the id of the authorized user
 
-    $id = $rachio->personId();
+```php
+$id = $rachio->personId();
+```
 
 This is merely a more friendly way of retrieving the authorized user from a
 `Rachio` instance. It is identical to doing:
 
-    $rachio = new Rachio('c0cc4791-57a4-4beb-98d7-9dffa6059f65');
-    $id = $rachio->personId;
+```php
+$rachio = new Rachio('c0cc4791-57a4-4beb-98d7-9dffa6059f65');
+$id = $rachio->personId;
+```
 
 ### Get the profile data for the authorized user
 
-    $person = $rachio->person();
+```php
+$person = $rachio->person();
+```
 
-
-<!-- <a name="device-schedule-data"> -->
+<a name="device-schedule-data">
 ## Getting Device and Schedule Data
 
 ### Get all the devices associated with an account
 
-    $devices = $rachio->devices();
+```php
+$devices = $rachio->devices();
+```
 
 ### Get info for a specific device associated with an account
 
 This method can accept a `device id`.
 
-    $devices = $rachio->devices();
-    $device = $rachio->device($devices[0]->id);
+```php
+$devices = $rachio->devices();
+$device = $rachio->device($devices[0]->id);
+```
 
 Since many people will have just a single Rachio system, the SDK will automatically use the first device in your account if you don't pass an id.
 
-    $device = $rachio->device();
+```php
+$device = $rachio->device();
+```
 
 ### Get the currently running schedule
 
-    $schedule = $rachio->currentSchedule($deviceId);
+```php
+$schedule = $rachio->currentSchedule($deviceId);
+```
 
 Or, use the default device.
 
-    $schedule = $rachio->currentSchedule();
+```php
+$schedule = $rachio->currentSchedule();
+```
 
 _Note: If the Rachio system isn't running, this will return `null`._
 
 ### Get the upcoming schedules for the next two weeks
 
-    $schedule = $rachio->upcomingSchedule($deviceId);
+```php
+$schedule = $rachio->upcomingSchedule($deviceId);
+```
 
 Again, for the default device: 
 
-    $schedule = $rachio->upcomingSchedule();
+```php
+$schedule = $rachio->upcomingSchedule();
+```
 
-
-<!-- <a name="controlling"> -->
+<a name="controlling">
 ## Controlling Your Rachio
 
 ### Starting a new Schedule
@@ -117,12 +139,16 @@ passed, the system will run for 600 seconds (10 minutes).
 
 Examples:
 
-    $rachio->start(6, 300);             // Run Zone 6 for 5 minutes
-    $rachio->start(2);                  // Run Zone 2 for 10 minutes
-    $rachio->start([1, 2, 5], 1200);    // Run Zones 1, 2, and 5 for 20 minutes
+```php
+$rachio->start(6, 300);             // Run Zone 6 for 5 minutes
+$rachio->start(2);                  // Run Zone 2 for 10 minutes
+$rachio->start([1, 2, 5], 1200);    // Run Zones 1, 2, and 5 for 20 minutes
+```
 
 By default, the system will automatically use the first device in your account
 when starting. If you'd like to specify the device to use, you can pass a 
 device id to the `setDevice()` method. For example:
 
-    $rachio->devices();
+```php
+$rachio->devices();
+```
