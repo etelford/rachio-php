@@ -1,6 +1,6 @@
 <?php
 
-namespace Etelford\Rachio;
+namespace ETelford\Rachio;
 
 use GuzzleHttp\Client;
 use stdClass;

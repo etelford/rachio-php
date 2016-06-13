@@ -9,7 +9,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Etelford\\Rachio\\": "src"
+            "ETelford\\Rachio\\": "src"
         }
     },
     "require": {

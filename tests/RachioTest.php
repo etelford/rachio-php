@@ -1,6 +1,6 @@
 <?php
  
-use Etelford\Rachio\Rachio;
+use ETelford\Rachio\Rachio;
 
 class RachioTest extends \PHPUnit_Framework_TestCase
 {
