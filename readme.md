@@ -69,7 +69,7 @@ This is merely a more friendly way of retrieving the authorized user from a
 `Rachio` instance. It is identical to doing:
 
 ```php
-$rachio = new Rachio('c0cc4791-57a4-4beb-98d7-9dffa6059f65');
+$rachio = new Rachio('your-api-key');
 $id = $rachio->personId;
 ```
 
