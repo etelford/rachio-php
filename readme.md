@@ -44,7 +44,7 @@ require_once('vendor/autoload.php');
 First, import the class.
 
 ```php
-use Etelford\Rachio;
+use ETelford\Rachio;
 ```
 
 Next, create a new instance of `Rachio` and pass in your API key.
