@@ -50,7 +50,7 @@ use ETelford\Rachio;
 Next, create a new instance of `Rachio` and pass in your API key.
 
 ```php
-$rachio = new Rachio('c0cc4791-57a4-4beb-98d7-9dffa6059f65');
+$rachio = new Rachio('your-api-key');
 ```
 
 With a `Rachio` object created, you can do a number of things.
