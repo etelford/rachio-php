@@ -28,12 +28,15 @@ This SDK requires **PHP >= 5.5.0**.
 
 The Rachio SDK may be installed through Composer.
 
-    composer require etelford/rachio
+```bash
+composer require etelford/rachio
+```
 
 Make sure you're using Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
 
-    require_once('vendor/autoload.php');
-
+```php
+require_once('vendor/autoload.php');
+```
 
 <a name="start">
 ## Creating a Rachio Instance
