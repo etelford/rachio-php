@@ -1,6 +1,6 @@
 # Rachio PHP SDK
 
-A simple client to interact with the Rachio irrigation control system. See 
+A simple client to interact with the Rachio irrigation control system. See
 [http://rachio.readme.io/v1.0/docs/](http://rachio.readme.io/v1.0/docs/).
 
 This package is compliant with [PSR-2] and [PSR-4].
@@ -123,7 +123,7 @@ _Note: If the Rachio system isn't running, this will return `null`._
 $schedule = $rachio->upcomingSchedule($deviceId);
 ```
 
-Again, for the default device: 
+Again, for the default device:
 
 ```php
 $schedule = $rachio->upcomingSchedule();
@@ -149,7 +149,7 @@ $rachio->start([1, 2, 5], 1200);    // Run Zones 1, 2, and 5 for 20 minutes
 ```
 
 By default, the system will automatically use the first device in your account
-when starting. If you'd like to specify the device to use, you can pass a 
+when starting. If you'd like to specify the device to use, you can pass a
 device id to the `setDevice()` method. For example:
 
 ```php
