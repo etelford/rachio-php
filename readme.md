@@ -20,10 +20,10 @@ This SDK requires **PHP >= 5.5.0**.
 * [Creating a Rachio Instance](#start)
 * [Getting User Data](#user-data)
 * [Getting Device and Schedule Data](#device-schedule-data)
-* [Controlling Your Rachio](#controlling)
 
 
 <a name="install"/>
+
 ## Installation
 
 The Rachio SDK may be installed through Composer.
@@ -39,6 +39,7 @@ require_once('vendor/autoload.php');
 ```
 
 <a name="start">
+
 ## Creating a Rachio Instance
 
 First, import the class.
@@ -57,6 +58,7 @@ With a `Rachio` object created, you can do a number of things.
 
 
 <a name="user-data">
+
 ## Getting User data
 
 ### Get the id of the authorized user
@@ -80,6 +82,7 @@ $person = $rachio->person();
 ```
 
 <a name="device-schedule-data">
+
 ## Getting Device and Schedule Data
 
 ### Get all the devices associated with an account
@@ -127,31 +130,4 @@ Again, for the default device:
 
 ```php
 $schedule = $rachio->upcomingSchedule();
-```
-
-<a name="controlling">
-## Controlling Your Rachio
-
-### Starting a new Schedule
-
-The `start` method requires one or more `zoneNumbers` to be passed in. Zones
-are numbered `1-8` for eight zone systems and `1-16` for sixteen zone systems.
-
-You can optionally pass a `duration` to this method. If no `duration` is
-passed, the system will run for 600 seconds (10 minutes).
-
-Examples:
-
-```php
-$rachio->start(6, 300);             // Run Zone 6 for 5 minutes
-$rachio->start(2);                  // Run Zone 2 for 10 minutes
-$rachio->start([1, 2, 5], 1200);    // Run Zones 1, 2, and 5 for 20 minutes
-```
-
-By default, the system will automatically use the first device in your account
-when starting. If you'd like to specify the device to use, you can pass a
-device id to the `setDevice()` method. For example:
-
-```php
-$rachio->devices();
 ```
